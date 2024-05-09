@@ -1,8 +1,41 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Prueba técnica: Buscador de equipos de fútbol
 
-Currently, two official plugins are available:
+Este desafío frontend presenta un proyecto desafiante que involucra el desarrollo de
+una aplicación web completa para buscar y gestionar equipos de fútbol. La
+aplicación no solo ofrece funcionalidades básicas de búsqueda, sino que también
+proporciona herramientas avanzadas para la gestión detallada de equipos y
+jugadores.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Instrucciones para la ejecución:
+
+Clone el proyecto
+
+```bash
+  git clone https://github.com/Nahuel1810/prueba-tecnica-buscador.git
+```
+
+Abra la carpeta raiz  del proyecto
+
+```bash
+  cd PruebaTecnicaDistrisuper
+```
+
+Instale las dependencias
+
+```bash
+  npm install
+```
+
+Corra el servidor
+
+```bash
+  npm run dev
+```
+
+
+Abra en su navegador 
+```bash
+http://localhost:5173/
+```
