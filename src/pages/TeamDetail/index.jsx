@@ -17,7 +17,9 @@ export default function TeamDetail() {
     const [hasSelectedPlayers, setHasSelectedPlayers] = useState(false);
 
     const handleModalDelete = () => setDeleteModal(prevState => !prevState);
-
+    const handleUpdateSelectedPlayers = (updatedSelectedPlayers) => {
+        setSelectedPlayers(updatedSelectedPlayers);
+    };
     const handlePlayerSelect = (index) => {
         const isSelected = selectedPlayers.includes(index);
         if (isSelected) {
@@ -95,7 +97,7 @@ export default function TeamDetail() {
                     </div>
                 </div>
             </div >
-            <DeleteModal isOpen={deleteModal} handleClose={handleModalDelete} entitiesId={[selectedPlayers, id]} typeOfModal={2} />
+            <DeleteModal onUpdateSelectedPlayers={handleUpdateSelectedPlayers} isOpen={deleteModal} handleClose={handleModalDelete} entitiesId={[selectedPlayers, id]} typeOfModal={2} />
         </>
     );
 }

@@ -3,7 +3,7 @@ import DefaultModal from '../DefaultModal';
 import DefaultButton from '../../Buttons/DefaultButton';
 import { useTeams } from '../../../contexts/TeamsContext';
 
-export default function DeleteModal({ isOpen, handleClose, entitiesId, typeOfModal }) {
+export default function DeleteModal({ isOpen, handleClose, entitiesId, typeOfModal, onUpdateSelectedPlayers }) {
     const { deleteTeam, getTeamById, deletePlayersFromTeam } = useTeams();
     const [teamsToDelete, setTeamsToDelete] = useState([]);
 
@@ -23,9 +23,10 @@ export default function DeleteModal({ isOpen, handleClose, entitiesId, typeOfMod
 
     function handleDeletePlayers() {
         if (entitiesId.length > 0) {
-            deletePlayersFromTeam(parseInt(entitiesId[1]), entitiesId[0])
+            deletePlayersFromTeam(parseInt(entitiesId[1]), entitiesId[0]);
+            handleClose();
+            onUpdateSelectedPlayers([]);
         }
-        handleClose();
     }
 
     return (
