@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSoccerBall } from '@fortawesome/free-solid-svg-icons';
+import { faSoccerBall, faStar } from '@fortawesome/free-solid-svg-icons';
 import DefaultModal from '../DefaultModal';
 import DefaultButton from '../../Buttons/DefaultButton';
 import Radio from '../../Inputs/Radio';
@@ -51,7 +51,7 @@ export default function FiltersModal({ isOpen, handleClose }) {
 
                 <div onClick={handleShowRating} className={`flex flex-row justify-between items-center p-2 mt-1 bg-gray-100 w-full rounded font-bold shadow border cursor-pointer ${showRating ? 'border-gray-400 bg-gray-300' : ''}`}>
                     <p>Valoración mínima</p>
-                    <FontAwesomeIcon icon={faSoccerBall} />
+                    <FontAwesomeIcon icon={faStar} />
                 </div>
 
                 {showRating && <StarSelector rating={filters.minRating} handleRating={handleRating} />}

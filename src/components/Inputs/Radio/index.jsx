@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useFilters } from '../../../contexts/FilterContext';
-function Radio({ options, onChange }) {
-    const [selectedOption, setSelectedOption] = useState(null);
-    const { setFilters } = useFilters();
+
+function Radio({ options }) {
+    const { filters, setFilters } = useFilters();
 
     const handleOptionChange = (event) => {
-        setSelectedOption(event.target.value);
-        setFilters(prevFilters => ({ ...prevFilters, type: event.target.value }));
+        const selectedOption = event.target.value;
+        setFilters(prevFilters => ({ ...prevFilters, type: selectedOption }));
     };
 
     return (
@@ -14,7 +14,7 @@ function Radio({ options, onChange }) {
             {options.length > 0 && options.map((option) => (
                 <label
                     key={option.value}
-                    className={`inline-flex justify-between w-full items-center z-10 rounded-lg p-2 border border-transparent ${selectedOption === option.value ? 'border-primary bg-accent/50 font-bold' : ''
+                    className={`inline-flex justify-between w-full items-center z-10 rounded-lg p-2 border border-transparent ${filters.type === option.value ? 'border-primary bg-accent/50 font-bold' : ''
                         } hover:bg-accent/50 transition-all cursor-pointer`}
                 >
                     <div className="inline-flex items-center justify-center gap-2 relative z-10">
@@ -25,7 +25,7 @@ function Radio({ options, onChange }) {
                         value={option.value}
                         name="Options"
                         type="radio"
-                        checked={selectedOption === option.value}
+                        checked={filters.type === option.value}
                         onChange={handleOptionChange}
                     />
                 </label>

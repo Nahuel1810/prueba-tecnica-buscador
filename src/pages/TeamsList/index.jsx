@@ -1,4 +1,4 @@
-import { faAdd, faFilter, faSortDown, faSortUp, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faAdd, faFaceSadTear, faFilter, faSortDown, faSortUp, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Tooltip } from 'react-tooltip';
@@ -73,55 +73,62 @@ export default function TeamsList() {
     };
 
     return (
-        <div className='p-2 m-2'>
-            <div className='flex flex-row gap-2'>
-                <Searchbar value={searchbarContent} onChange={(e) => setSearchbarContent(e.target.value)} />
-                <div className='w'>
-                    <DefaultButton onClick={handleModalToggle(setFiltersModal)}><FontAwesomeIcon icon={faFilter} className='py-1' /></DefaultButton>
-                </div>
-            </div>
-
-            <h1 className="text-2xl text-center text-gray-800 font-bold py-1 mt-3">Equipos</h1>
-            <div className='flex flex-row justify-end'>
-                <div>
-                    <DefaultButton onClick={handleModalToggle(setDeleteModal)} bgColor="bg-error/70 border hover:bg-error" textColor="text-white" disabled={!hasSelectedTeams}>
-                        <span className='flex flex-row justify-between items-center gap-3'>
-                            <p>Borrar</p>
-                            <FontAwesomeIcon icon={faTrash} />
-                        </span>
-                    </DefaultButton>
-                </div>
-            </div>
-
-            <div className='p-2 mt-1 bg-gray-50 w-full flex flex-row justify-between items-center rounded-md font-bold border cursor-pointer' onClick={toggleOrder}>
-                <span>Nombre</span>
-                <FontAwesomeIcon icon={isAscending ? faSortUp : faSortDown} />
-            </div>
-
-            {sortedTeams.length > 0 ?
-                (sortedTeams.map((equipo) => (
-                    <TeamsListElement
-                        key={equipo.id}
-                        equipo={equipo}
-                        isSelected={selectedTeams.includes(equipo.id)}
-                        onCheckboxChange={handleCheckboxChange}
-                    />
-                ))) :
-                <>
-                    <div className='flex flex-col mt-2 px-4 pb-4 border rounded-md bg-white'>
-                        <p className='text-lg text-gray-500 text-center mt-5'>No hay equipos que mostrar</p>
+        <>
+            <div className='pt-6 px-4 md:px-24 bg-gray-700'>
+                <div className='flex flex-row gap-2 md:justify-center md:my-5'>
+                    <Searchbar value={searchbarContent} onChange={(e) => setSearchbarContent(e.target.value)} />
+                    <div className=''>
+                        <DefaultButton onClick={handleModalToggle(setFiltersModal)} bgColor="bg-transparent hover:bg-primary" textColor="text-gray-300 hover:text-white"><FontAwesomeIcon icon={faFilter} size='lg' /></DefaultButton>
                     </div>
-                </>
-
-            }
-
-            <div className='fixed bottom-5 right-5'>
-                <button data-tooltip-id="tooltip-agregar" data-tooltip-content="Agregar" className='btn bg-primary text-white rounded-full w-12 h-12 flex justify-center items-center' onClick={handleModalToggle(setAddModal)}><FontAwesomeIcon icon={faAdd} /></button>
+                </div>
+                <h1 className="text-2xl text-center text-white font-bold pt-3 pb-6 my-3 md:text-3xl">Lista de equipos</h1>
             </div>
-            <AddModal isOpen={addModal} handleClose={handleModalToggle(setAddModal)} />
-            <FiltersModal isOpen={filtersModal} handleClose={handleModalToggle(setFiltersModal)} />
-            <DeleteModal isOpen={deleteModal} handleClose={handleModalToggle(setDeleteModal)} typeOfModal={1} entitiesId={selectedTeams} />
-            <Tooltip id="tooltip-agregar" className='rounded-md font-semibold' />
-        </div>
+
+
+            <div className='p-2 m-2 md:px-24'>
+                <div className='flex flex-row justify-between gap-10 my-2 md:my-5'>
+                    <div className='p-2 bg-white w-full flex flex-row justify-between items-center rounded-md font-bold border cursor-pointer md:w-1/4' onClick={toggleOrder}>
+                        <span>Nombre</span>
+                        <FontAwesomeIcon icon={isAscending ? faSortUp : faSortDown} />
+                    </div>
+                    <div>
+                        <DefaultButton onClick={handleModalToggle(setDeleteModal)} bgColor="bg-error/70 border hover:bg-error" textColor="text-white" disabled={!hasSelectedTeams}>
+                            <span className='flex flex-row justify-between items-center gap-3'>
+                                <p>Borrar</p>
+                                <FontAwesomeIcon icon={faTrash} />
+                            </span>
+                        </DefaultButton>
+                    </div>
+                </div>
+
+
+                <div className='md:flex md:flex-row md:w-full md:flex-wrap md:gap-8'>
+                    {sortedTeams.length > 0 ?
+                        (sortedTeams.map((equipo) => (
+                            <TeamsListElement
+                                key={equipo.id}
+                                equipo={equipo}
+                                isSelected={selectedTeams.includes(equipo.id)}
+                                onCheckboxChange={handleCheckboxChange}
+                            />
+                        ))) :
+                        <>
+                            <div className='flex flex-col mt-2 px-4 pb-4 border rounded-md bg-white md:w-full'>
+                                <p className='text-lg text-gray-500 text-center mt-5'>No hay equipos que mostrar</p>
+                                <FontAwesomeIcon icon={faFaceSadTear} className='text-gray-300 mt-2' size='3x' />
+                            </div>
+                        </>
+                    }
+                </div>
+
+                <div className='fixed bottom-5 right-5'>
+                    <button data-tooltip-id="tooltip-agregar" data-tooltip-content="Agregar" className='btn bg-primary text-white rounded-full w-12 h-12 flex justify-center items-center' onClick={handleModalToggle(setAddModal)}><FontAwesomeIcon icon={faAdd} /></button>
+                </div>
+                <AddModal isOpen={addModal} handleClose={handleModalToggle(setAddModal)} />
+                <FiltersModal isOpen={filtersModal} handleClose={handleModalToggle(setFiltersModal)} />
+                <DeleteModal isOpen={deleteModal} handleClose={handleModalToggle(setDeleteModal)} typeOfModal={1} entitiesId={selectedTeams} />
+                <Tooltip id="tooltip-agregar" className='rounded-md font-semibold' />
+            </div>
+        </>
     );
 }

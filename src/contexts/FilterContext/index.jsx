@@ -6,7 +6,7 @@ export const useFilters = () => useContext(FiltersContext);
 
 export const FiltersProvider = ({ children }) => {
     const [filters, setFilters] = useState({
-        type: '',
+        type: null,
         minRating: 0,
     });
 

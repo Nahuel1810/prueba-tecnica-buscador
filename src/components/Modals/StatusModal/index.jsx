@@ -6,9 +6,9 @@ import DefaultButton from '../../Buttons/DefaultButton';
 
 export default function StatusModal({ isOpen, handleClose, isSuccess, message }) {
     return (
-        <DefaultModal isOpen={isOpen} onClose={handleClose} title={isSuccess ? 'Operación Exitosa' : 'Error'}>
+        <DefaultModal isOpen={isOpen} onClose={handleClose} title={isSuccess ? 'Éxito' : 'Error'}>
             <div className="flex items-center justify-center">
-                <FontAwesomeIcon icon={isSuccess ? faCheckCircle : faTimesCircle} className={isSuccess ? 'text-success' : 'text-error'} size="3x" />
+                <FontAwesomeIcon icon={isSuccess ? faCheckCircle : faTimesCircle} className={isSuccess ? 'text-primary' : 'text-error'} size="5x" />
             </div>
             <p className="text-center text-lg mt-4">{message}</p>
             <div className='flex flex-col items-center justify-center mt-6'>

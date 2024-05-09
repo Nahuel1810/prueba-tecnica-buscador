@@ -6,7 +6,6 @@ import { TeamsProvider } from './contexts/TeamsContext';
 import { PlayersProvider } from './contexts/PlayersContext';
 import TeamsList from './pages/TeamsList';
 import TeamDetail from './pages/TeamDetail';
-import Test from './pages/Test';
 import { FiltersProvider } from './contexts/FilterContext';
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
               <Routes>
                 <Route key="listado" path="/" element={<TeamsList />} />
                 <Route key="detalle-equipo" path="/equipo/:id" element={<TeamDetail />} />
-                <Route key="test" path="/test" element={<Test />} />
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             </FiltersProvider>

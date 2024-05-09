@@ -15,7 +15,7 @@ export default function TeamsListElement({ equipo, isSelected, onCheckboxChange 
 
     return (
         <>
-            <div className={`flex flex-col px-4 border my-1 p-1 rounded-md bg-white mb-1 ${isSelected ? 'border-blue-400' : ''}`} onClick={handleCheckboxChange}>
+            <div className={`flex flex-col px-4 border my-1 p-1 rounded-md bg-white mb-1 md:w-[350px] md:p-5 ${isSelected ? 'border-blue-400' : ''}`} onClick={handleCheckboxChange}>
                 <div className='flex flex-row justify-between items-start'>
                     <div>
                         <h2 className='text-xl font-bold text-gray-700 p-1'>{equipo.nombre}</h2>
@@ -30,8 +30,8 @@ export default function TeamsListElement({ equipo, isSelected, onCheckboxChange 
                 </div>
                 <div className='flex justify-between items-start'>
                     <p className='text-sm font-bold text-gray-500 pt-1.5'>{equipo.tipo}</p>
-                    <div className='w-2/5'>
-                        <DefaultButton textColor="text-gray-700 hover:text-white" bgColor="bg-gray-200" onClick={() => navigate(`/equipo/${equipo.id}`)}>Ver más <FontAwesomeIcon icon={faEye} size='sm' /></DefaultButton>
+                    <div className='w-2/5 md:w-40'>
+                        <DefaultButton textColor="text-gray-700 hover:text-white" bgColor="bg-gray-200" onClick={() => navigate(`/equipo/${equipo.id}`)}>Ver más <FontAwesomeIcon className="ml-1" icon={faEye} size='sm' /></DefaultButton>
                     </div>
                 </div>
             </div>

@@ -6,8 +6,8 @@ const PlayersContext = createContext();
 
 export const PlayersProvider = ({ children }) => {
     const initialPlayers = [
-        { nombre: 'Nahuel', posicion: 'MC', descripcion: 'crack' },
-        { nombre: 'María', posicion: 'DFC', descripcion: 'rápida' },
+        { nombre: 'Nahuel', posicion: 'MEDIOCAMPISTA', descripcion: 'Veloz' },
+        { nombre: 'Camila', posicion: 'DELANTERO', descripcion: 'Optimista del gol' },
     ];
     const [players, setPlayers] = useState(initialPlayers);
 
