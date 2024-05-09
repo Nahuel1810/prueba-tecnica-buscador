@@ -1,0 +1,58 @@
+import React, { useState, useEffect } from 'react';
+import { usePlayers } from '../../../contexts/PlayersContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
+export default function SelectPlayers({ onSelectionChange }) {
+    const [displayOptions, setDisplayOptions] = useState(false);
+    const [selectedPlayers, setSelectedPlayers] = useState([]);
+    const { players } = usePlayers();
+
+    useEffect(() => {
+        onSelectionChange(selectedPlayers);
+    }, [selectedPlayers, onSelectionChange]);
+
+    const handleDisplayOptions = () => {
+        setDisplayOptions(prevState => !prevState);
+    };
+
+    const handlePlayerSelect = (index) => {
+        const isSelected = selectedPlayers.includes(index);
+        if (isSelected) {
+            setSelectedPlayers(selectedPlayers.filter(item => item !== index));
+        } else {
+            setSelectedPlayers([...selectedPlayers, index]);
+        }
+    };
+
+    const isSelected = (index) => selectedPlayers.includes(index);
+
+    return (
+        <>
+            <div
+                className={`w-full h-10 flex flex-row justify-between items-center border border-gray-300 hover:border-gray-400 rounded-md px-4 my-1 shadow cursor-pointer transition-all duration-75 ${displayOptions ? 'text-white bg-primary font-bold' : 'text-gray-400 bg-white'}`}
+                onClick={handleDisplayOptions}
+            >
+                <p>Elige los jugadores</p>
+                <FontAwesomeIcon icon={displayOptions ? faChevronUp : faChevronDown} />
+            </div>
+
+            {displayOptions && players.length > 0 && (
+                <>
+                    <div className="border shadow w-full rounded-md px-2 mb-2">
+                        {players.map((jugador, index) => (
+                            <div
+                                key={index}
+                                className={`rounded flex flex-row gap-5 justify-between px-2 py-2 my-1 w-full border border-transparent border-b-inherit transition-colors duration-75 ${isSelected(index) ? 'bg-gray-100 border border-blue-400 border-b-blue-400' : ''}`}
+                                onClick={() => handlePlayerSelect(index)}
+                            >
+                                <h2 className='text-dark'>{jugador.nombre}</h2>
+                                <p className='text-dark'>{jugador.posicion}</p>
+                            </div>
+                        ))}
+                    </div>
+                </>
+            )}
+        </>
+    );
+};
