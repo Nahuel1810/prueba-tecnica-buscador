@@ -9,7 +9,7 @@ export default function Input({ type, placeholder, value, onChange, error }) {
             placeholder={placeholder}
             value={value}
             onChange={onChange}
-            className={`border border-gray-300 hover:border-gray-400 rounded-md px-4 py-2 my-1 focus:outline-none focus:border-accent bg-white text-dark md:shadow-none shadow cursor-pointer focus:scale-105 transition-transform duration-75 md:w-80 ${error ? 'border-red-500' : ''}`}
+            className={`w-full border border-gray-300 hover:border-gray-400 rounded-md px-4 py-2 my-1 focus:outline-none focus:border-accent bg-white text-dark md:shadow-none shadow cursor-pointer focus:scale-105 transition-transform duration-75 md:w-80 ${error ? 'border-red-500' : ''}`}
         />
     );
 };

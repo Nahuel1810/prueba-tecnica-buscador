@@ -30,7 +30,7 @@ export default function SelectPlayers({ onSelectionChange, error }) {
     return (
         <>
             <div
-                className={`w-full h-10 flex flex-row justify-between items-center border border-gray-300 hover:border-gray-400 rounded-md px-4 my-1 shadow cursor-pointer transition-all duration-75 md:w-80 mb-2 md:shadow-none ${displayOptions ? 'text-white bg-primary font-bold' : 'text-gray-400 bg-white'} ${error ? 'border-red-500' : ''}`}
+                className={`w-full h-10 flex flex-row justify-between items-center border border-gray-300 hover:border-gray-400 rounded-md px-4 my-1 shadow cursor-pointer transition-all duration-75 md:w-80 mb-2 md:shadow-none ${displayOptions ? 'text-white bg-gradient-to-r from-emerald-600 to-teal-600 font-semibold' : 'text-gray-400 bg-white'} ${error ? 'border-red-500' : ''}`}
                 onClick={handleDisplayOptions}
             >
                 <p>Elige los jugadores</p>
@@ -39,15 +39,15 @@ export default function SelectPlayers({ onSelectionChange, error }) {
 
             {displayOptions && players.length > 0 && (
                 <>
-                    <div className="border shadow w-full rounded-md px-2 mb-2 md:w-80 md:p-2 cursor-pointer">
+                    <div className="border shadow w-full rounded-md px-2 mb-2 md:w-80 md:p-2 cursor-pointer bg-gray-50">
                         {players.map((jugador, index) => (
                             <div
                                 key={index}
-                                className={`rounded flex flex-row gap-5 justify-between px-2 py-2 my-2 w-full border transition-colors duration-75 ${isSelected(index) ? 'bg-gray-100 border border-blue-400 border-b-blue-400' : ''}`}
+                                className={`rounded flex flex-row gap-5 justify-between px-2 py-2 my-2 w-full border transition-colors duration-75 ${isSelected(index) ? 'bg-blue-100 border border-blue-400 border-b-blue-400' : ''}`}
                                 onClick={() => handlePlayerSelect(index)}
                             >
-                                <h2 className='text-dark'>{jugador.nombre}</h2>
-                                <p className='text-dark'>{jugador.posicion}</p>
+                                <p className='text-dark font-semibold'>{jugador.nombre}</p>
+                                <p className='text-gray-600'>{jugador.posicion}</p>
                             </div>
                         ))}
                     </div>

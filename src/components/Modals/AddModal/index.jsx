@@ -24,7 +24,7 @@ export default function AddModal({ isOpen, handleClose }) {
                 </>
             ) : (
                 <DefaultModal isOpen={isOpen} onClose={handleClose} title={'Agregar'}>
-                    <p className='text-dark mt-5 mb-1 md:ml-10'>¿Qué desea agregar al sistema?</p>
+                    <p className='text-dark mt-5 mb-3 md:ml-10'>¿Qué desea agregar al sistema?</p>
                     <div className='flex flex-col items-center justify-center gap-2 md:px-10'>
                         <DefaultButton onClick={() => setTypeOfModal(1)}>Un jugador</DefaultButton>
                         <DefaultButton onClick={() => setTypeOfModal(2)}>Un equipo</DefaultButton>

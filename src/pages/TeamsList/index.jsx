@@ -74,20 +74,20 @@ export default function TeamsList() {
 
     return (
         <>
-            <div className='pt-6 px-4 md:px-24 bg-gray-700'>
-                <div className='flex flex-row gap-2 md:justify-center md:my-5'>
+            <div className='pt-6 px-4 md:px-24 bg-gradient-to-r from-emerald-500 to-emerald-700 to-90% '>
+                <h1 className="text-3xl text-center text-white font-bold my-3 md:text-4xl">Lista de equipos</h1>
+                <div className='flex flex-row gap-2 md:justify-center md:my-5 md:pb-10 pt-4 pb-8'>
                     <Searchbar value={searchbarContent} onChange={(e) => setSearchbarContent(e.target.value)} />
                     <div className=''>
-                        <DefaultButton onClick={handleModalToggle(setFiltersModal)} bgColor="bg-transparent hover:bg-primary" textColor="text-gray-300 hover:text-white"><FontAwesomeIcon icon={faFilter} size='lg' /></DefaultButton>
+                        <DefaultButton onClick={handleModalToggle(setFiltersModal)} bgColor="bg-transparent hover:bg-gray-300/30" textColor="text-gray-300 hover:text-white"><FontAwesomeIcon icon={faFilter} size='lg' /></DefaultButton>
                     </div>
                 </div>
-                <h1 className="text-2xl text-center text-white font-bold pt-3 pb-6 my-3 md:text-3xl">Lista de equipos</h1>
             </div>
 
 
             <div className='p-2 m-2 md:px-24'>
                 <div className='flex flex-row justify-between gap-10 my-2 md:my-5'>
-                    <div className='p-2 bg-white w-full flex flex-row justify-between items-center rounded-md font-bold border cursor-pointer md:w-1/4' onClick={toggleOrder}>
+                    <div className='p-2 bg-white w-full flex flex-row justify-between items-center rounded-md font-semibold md:font-bold text-sm md:text-base border cursor-pointer md:w-1/4 text-gray-600' onClick={toggleOrder}>
                         <span>Nombre</span>
                         <FontAwesomeIcon icon={isAscending ? faSortUp : faSortDown} />
                     </div>

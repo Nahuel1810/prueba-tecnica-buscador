@@ -42,14 +42,14 @@ export default function FiltersModal({ isOpen, handleClose }) {
                 <p className='text-dark mt-5 mb-1'>Filtrar la búsqueda por:</p>
                 <div className='flex flex-col items-center justify-center mt-3'>
 
-                    <div onClick={handleShowTypes} className={`flex flex-row justify-between items-center p-2 mt-1 bg-gray-100 w-full rounded font-bold shadow border cursor-pointer ${showTypes ? 'border-gray-400 bg-gray-300' : ''}`}>
+                    <div onClick={handleShowTypes} className={`text-gray-700 text-sm md:text-base flex flex-row justify-between items-center px-2 py-3 md:py-2 mt-1 bg-gray-100 w-full rounded font-semibold border cursor-pointer ${showTypes ? 'border-gray-400 bg-gray-300' : ''}`}>
                         <p>Tipos de juego</p>
                         <FontAwesomeIcon icon={faSoccerBall} />
                     </div>
                 </div>
                 {showTypes && <Radio options={options} />}
 
-                <div onClick={handleShowRating} className={`flex flex-row justify-between items-center p-2 mt-1 bg-gray-100 w-full rounded font-bold shadow border cursor-pointer ${showRating ? 'border-gray-400 bg-gray-300' : ''}`}>
+                <div onClick={handleShowRating} className={`text-gray-700 text-sm md:text-base flex flex-row justify-between items-center px-2 py-3 md:py-2 mt-1 bg-gray-100 w-full rounded font-semibold border cursor-pointer ${showRating ? 'border-gray-400 bg-gray-300' : ''}`}>
                     <p>Valoración mínima</p>
                     <FontAwesomeIcon icon={faStar} />
                 </div>

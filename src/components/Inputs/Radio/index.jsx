@@ -18,7 +18,7 @@ function Radio({ options }) {
                         } hover:bg-accent/50 transition-all cursor-pointer`}
                 >
                     <div className="inline-flex items-center justify-center gap-2 relative z-10">
-                        <p className="font-semibold">{option.label}</p>
+                        <p className="font-semibold text-sm md:text-base">{option.label}</p>
                     </div>
                     <input
                         className="checked:text-accent checked:ring-0 checked:ring-current focus:ring-0 focus:ring-current"

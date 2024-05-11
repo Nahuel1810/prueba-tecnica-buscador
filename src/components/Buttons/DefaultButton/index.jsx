@@ -14,7 +14,7 @@ export default function DefaultButton({ children, onClick, textColor, bgColor, d
     } else {
         return (
             <button
-                className={`btn ${textColor ? textColor : 'text-white'} ${bgColor ? bgColor : 'bg-primary'} w-full `}
+                className={`btn ${textColor ? textColor : 'text-white'} ${bgColor ? bgColor : 'bg-primary hover:bg-gradient-to-r from-primary to-70% to-accent'} w-full `}
                 onClick={onClick}
             >
                 {children}

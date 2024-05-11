@@ -33,7 +33,7 @@ export default function StarSelector({ rating, handleRating }) {
     }
 
     return (
-        <div className="flex flex-row justify-center items-center p-2 border bg-gray-100 rounded">
+        <div className="flex flex-row justify-center items-center p-2 border bg-gray-50 rounded-md">
             {stars}
         </div>
     );

@@ -44,7 +44,7 @@ export default function TeamDetail() {
 
     return (
         <>
-            <div className='bg-accent w-full h-auto pb-7'>
+            <div className='bg-gradient-to-r from-emerald-500 to-emerald-700 to-90% w-full h-auto pb-7'>
                 <div>
                     <FontAwesomeIcon icon={faChevronCircleLeft} className='cursor-pointer text-white/50 pl-4 pt-4 hover:text-white' size='2xl' onClick={() => navigate('/')} />
                 </div>
@@ -54,11 +54,11 @@ export default function TeamDetail() {
                 <p className=' text-center text-white'>Tipo de juego: {team.tipo}</p>
             </div>
 
-            <div key={team.id} className='flex flex-col gap-5 justify-center'>
-                <div className='px-4 py-2'>
+            <div key={team.id} className='flex flex-col gap-5 justify-center items-center md:px-10 md:mt-2'>
+                <div className='px-4 py-2 md:w-2/3'>
                     <div className='bg-white rounded-md w-full p-4 mt-2 shadow border-t'>
-                        <div className='flex flex-row w-full justify-between items-end'>
-                            <p className='text-lg text-gray-800 font-bold'>Lista de jugadores:</p>
+                        <div className='flex flex-row w-full justify-between items-end gap-2'>
+                            <p className='text-lg text-gray-700 font-bold'>Lista de jugadores:</p>
                             <div>
                                 <DefaultButton onClick={handleModalDelete} bgColor="bg-error/70 border hover:bg-error" textColor="text-white" disabled={!(hasSelectedPlayers)}>
                                     <span className='flex flex-row justify-between items-center gap-3'>
@@ -77,7 +77,7 @@ export default function TeamDetail() {
                                     className={`flex flex-col justify-center bg-gray-50 my-2 mx-2 px-2 pb-2 text-gray-600 rounded-md cursor-pointer border  ${selectedPlayers.includes(index) ? 'border-blue-400' : ''}`}
                                 >
                                     <div className='flex flex-row justify-between'>
-                                        <h2 className='text-lg font-bold pt-2 '>{jugador.nombre}</h2>
+                                        <h2 className='text-lg font-semibold pt-2 '>{jugador.nombre}</h2>
                                         <input
                                             type="checkbox"
                                             checked={selectedPlayers.includes(index)}
@@ -86,7 +86,7 @@ export default function TeamDetail() {
                                         />
                                     </div>
                                     <p> {jugador.posicion}</p>
-                                    <p> {jugador.descripcion}</p>
+                                    <p className='text-gray-400'> {jugador.descripcion}</p>
                                 </div>
                             ))) :
                             <div className='flex flex-col mt-2 px-4 pb-4 border rounded-md bg-white md:w-full'>
