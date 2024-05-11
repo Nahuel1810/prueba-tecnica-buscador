@@ -8,6 +8,14 @@ proporciona herramientas avanzadas para la gestión detallada de equipos y
 jugadores.
 
 
+![image](https://github.com/Nahuel1810/prueba-tecnica-buscador/assets/62159080/09c612ef-efdb-4f68-a82a-a7e3b652a837)
+![image](https://github.com/Nahuel1810/prueba-tecnica-buscador/assets/62159080/371015cc-a6e7-4847-bc17-486c487da4c0)
+![image](https://github.com/Nahuel1810/prueba-tecnica-buscador/assets/62159080/42022253-049e-467d-99bb-4fdcfcbc89cd)
+![image](https://github.com/Nahuel1810/prueba-tecnica-buscador/assets/62159080/9fdc209f-17d9-4c86-b12f-eb9e23a13659)
+
+
+
+
 ## Instrucciones para la ejecución:
 
 Clone el proyecto
