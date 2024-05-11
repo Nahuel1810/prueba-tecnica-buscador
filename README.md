@@ -19,7 +19,7 @@ Clone el proyecto
 Abra la carpeta raiz  del proyecto
 
 ```bash
-  cd PruebaTecnicaDistrisuper
+  cd prueba-tecnica-buscador
 ```
 
 Instale las dependencias
@@ -39,3 +39,11 @@ Abra en su navegador
 ```bash
 http://localhost:5173/
 ```
+
+# Comentarios adicionales
+
+Algunas funcionalidades que fueron pensadas originalmente no llegaron a ser presentadas. Una de las ideas que quiero mencionar consistia en mostrar un "tutorial" de las secciones de la web. Esto se podria hacer utilizando session storage para determinar si es la primera vez que la persona entra en la web, y desde el punto de vista visual, pensaba hacerlo con tooltips que paso a paso vayan apareciendo aclarando que función cumple cada cosa.
+
+
+
+
